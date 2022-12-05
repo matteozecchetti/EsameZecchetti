@@ -87,7 +87,7 @@ def render_map():
     for c in contatori:
         markers += "L.marker(["+str(c[1])+", "+str(c[2]) + \
             "], {icon: "+stati[str(int(c[0]))] + \
-            "Icon}).bindPopup('<div class=\"container-fluid\" style=\"text-align:center;font-size:20px\"><p style=\"font-weight:1000\">"+str(int(c[0]))+"</p><p><a href=\"https://progetto-v3.ew.r.appspot.com/graph/temp/" + \
+            "Icon}).bindPopup('<div class=\"container-fluid\" style=\"text-align:center;font-size:20px\"><p style=\"font-weight:1000\">"+str(int(c[0]))+"</p><p><a href=\"https://esamezecchetti.ew.r.appspot.com/graph/temp/" + \
             str(int(c[0])) + \
             "\">clicca per vedere la scheda</a></p></div>').addTo(map)\n"
 
@@ -146,7 +146,7 @@ def read_data_temp(metercode):
                     doc.id)+"</p>"
         else:
             lista_contatori = lista_contatori + \
-                "<a href=\"https://progetto-v3.ew.r.appspot.com/graph/temp/"+doc.id+"\"1 style=\"text-decoration:none\"><p style=\"color:rgb(10, 12, 150);font-size:20px;font-weight:800;background-color:white;\">"+str(
+                "<a href=\"https://esamezecchetti.ew.r.appspot.com/graph/temp/"+doc.id+"\"1 style=\"text-decoration:none\"><p style=\"color:rgb(10, 12, 150);font-size:20px;font-weight:800;background-color:white;\">"+str(
                     doc.id)+"</p></a>"
     return json.dumps(data), lista_contatori, avg_temp1, avg_temp2
 
@@ -173,7 +173,7 @@ def read_data_port(metercode):
                     doc.id)+"</p>"
         else:
             lista_contatori = lista_contatori + \
-                "<a href=\"https://progetto-v3.ew.r.appspot.com/graph/port/"+doc.id+"\"1 style=\"text-decoration:none\"><p style=\"color:rgb(10, 12, 150);font-size:20px;font-weight:800;background-color:white;\">"+str(
+                "<a href=\"https://esamezecchetti.ew.r.appspot.com/graph/port/"+doc.id+"\"1 style=\"text-decoration:none\"><p style=\"color:rgb(10, 12, 150);font-size:20px;font-weight:800;background-color:white;\">"+str(
                     doc.id)+"</p></a>"
     return json.dumps(data), lista_contatori, avg_port, max_port, min_port
 

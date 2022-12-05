@@ -17,5 +17,6 @@
 __pycache__/
 # Ignored by the build system
 /setup.cfg
-
-sensor.py
+**/credentials.json
+**/secret.py
+**/sensor.py
