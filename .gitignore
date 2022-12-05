@@ -5,3 +5,4 @@ credentials.json
 venv/
 ZZZ_STUFF/
 .idea/
+**/test_v1.py
