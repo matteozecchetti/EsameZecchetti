@@ -1,7 +1,7 @@
 credentials.json
 **/*.pem
-/secret.py
-secret
+**/secret.py
+**/secret
 venv/
 ZZZ_STUFF/
 .idea/
