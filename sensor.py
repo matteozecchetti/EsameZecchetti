@@ -11,7 +11,7 @@ print(project_id)
 print(topic_name)
 
 # legge il csv
-df = pd.read_csv("TEA2.csv", sep=";")
+df = pd.read_csv("dataset/TEA2.csv", sep=";")
 
 # legge il csv contatori con lat long
 contatori = pd.read_csv("contatori.csv", sep=",")

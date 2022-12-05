@@ -19,3 +19,4 @@ __pycache__/
 /setup.cfg
 **/secret.py
 **/sensor.py
+**/meter_list.py
