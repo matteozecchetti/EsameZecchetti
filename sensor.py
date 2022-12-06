@@ -51,16 +51,16 @@ data = ""
 # Potenza 1;Unità ;Temperatura 1;Unità;Temperatura 2;Unità;Volume 1;Unità
 
 # ogni 5 secondi vengono lette 115 righe del dataset (oridnato per data ed ora)
-while (c < 500):
+while (c < 800):
     data = ""
-    for row in df_sensor.truncate(before=c, after=c+114).iterrows():
+    for row in df_sensor.truncate(before=c, after=c+112).iterrows():
         data = data + str(row[1]["Numero di serie del contatore"])+"$" + \
             str(row[1]["Tempo di lettura"])+"$" + \
             str(row[1]["Portata 1"]) + "$" + str(row[1]["Temperatura 1"])+"$"+str(row[1]["Temperatura 2"]) + "$" + \
             str(row[1]["Energia 1 Energia termica"])+"$"+str(row[1]
                                                              ["Potenza 1"])+"$"+str(row[1]["Volume 1"]) + "next"
 
-    c = c+115
+    c = c+113
 
     data_encoded = data.encode("utf-8")
 
