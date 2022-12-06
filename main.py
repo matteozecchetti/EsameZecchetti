@@ -67,14 +67,20 @@ def render_map():
     db = firestore.Client.from_service_account_json('credentials.json')
     # recupero la collection last e mi salvo gli stati attuali per ogni codice contatore, assegnando i colori
     stati = {}
+    accesi = 0
+    spenti = 0
+    guasti = 0
     for doc in db.collection('last').stream():
         # print(f'{doc.id} --> {doc.to_dict()}')
         if doc.to_dict()["portata"] == 0:
             stati[doc.id] = "black"
+            spenti += 1
         elif doc.to_dict()["temperatura1"] > doc.to_dict()["temperatura2"]:
             stati[doc.id] = "green"
+            accesi += 1
         else:
             stati[doc.id] = "red"
+            guasti += 1
 
     # recupero codici e coordinate dei contatori
     contatori = []
@@ -91,7 +97,7 @@ def render_map():
             str(int(c[0])) + \
             "\">clicca per vedere la scheda</a></p></div>').addTo(map)\n"
 
-    return render_template('map.html', title='Home', markers=markers, username=current_user.username)
+    return render_template('map.html', title='Home', markers=markers, username=current_user.username, accesi=accesi, spenti=spenti, guasti=guasti)
 
 
 def upload_data(msg):
